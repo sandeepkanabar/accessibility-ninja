@@ -4,9 +4,9 @@ Speaker-reviewed slide reading companions for blind and low-vision conference at
 
 ## Problem and bounded MVP
 
-Conference slides often communicate their meaning through diagrams, image layout, and sequence. A screen reader may encounter a linear object order that does not preserve the intended relationships. Accessibility Ninja extracts slide text and object order from a `.pptx`, flags missing image descriptions and review items, lets a speaker approve a short explanation, and offers a downloadable HTML reading companion plus hybrid search.
+Conference slides often communicate their meaning through diagrams, image layout, and sequence. A screen reader may encounter a linear object order that does not preserve the intended relationships. Accessibility Ninja extracts slide text and object order from a presentation, flags missing image descriptions and review items, lets a speaker approve a short explanation, and offers a downloadable HTML reading companion plus hybrid search.
 
-The prototype does **not** rewrite PPTX files, determine the correct reading order, author trusted visual descriptions automatically, or certify accessibility. Speaker review and assistive-technology testing remain necessary.
+The prototype does **not** rewrite files, determine the correct reading order, author trusted visual descriptions automatically, or certify accessibility. Speaker review and assistive-technology testing remain necessary.
 
 ## Run locally
 
