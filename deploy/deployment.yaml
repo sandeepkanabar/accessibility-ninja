@@ -44,6 +44,7 @@ spec:
             periodSeconds: 10
           securityContext:
             runAsNonRoot: true
+            runAsUser: 1000
             allowPrivilegeEscalation: false
             seccompProfile:
               type: RuntimeDefault
