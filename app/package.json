@@ -1,10 +1,15 @@
 {
-  "name": "cnh-starter",
-  "version": "1.0.0",
+  "name": "accessibility-ninja",
+  "version": "0.1.0",
   "private": true,
-  "description": "Starter app for the Radar AI SRE track at the Cloud Native Hackathon",
-  "main": "server.js",
+  "description": "Speaker-reviewed slide reading companions for blind and low-vision conference attendees",
   "scripts": {
-    "start": "node server.js"
-  }
+    "start": "node --env-file=../.env server.js",
+    "start:dash0": "NODE_OPTIONS='--require @opentelemetry/auto-instrumentations-node/register' node --env-file=../.env server.js"
+  },
+  "dependencies": {
+    "@opentelemetry/auto-instrumentations-node": "^0.83.0",
+    "@opentelemetry/api": "^1.9.0"
+  },
+  "engines": { "node": ">=20.6" }
 }

@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Accessibility Ninja — slide reading companion</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to main content</a>
+  <header><p class="eyebrow">SPEAKER-REVIEWED SLIDE ACCESS</p><h1>Accessibility Ninja</h1><p>Help blind and low-vision attendees follow the structure and meaning of conference slides.</p></header>
+  <main id="main">
+    <section class="panel" aria-labelledby="upload-heading"><h2 id="upload-heading">Review a PowerPoint deck</h2>
+      <p>Upload a small <code>.pptx</code>. We extract slide text and object order, flag items for review, and let the speaker approve descriptions in a navigable reading companion. Deck content is processed by this app; when Elasticsearch is configured, extracted text and approved explanations are also sent to that index.</p>
+      <form id="upload-form"><label for="deck-file">PowerPoint file (.pptx, up to 15 MB)</label><input id="deck-file" name="file" type="file" accept=".pptx,application/vnd.openxmlformats-officedocument.presentationml.presentation" required><button type="submit">Review slides</button></form>
+      <p id="status" role="status" aria-live="polite"></p>
+    </section>
+    <section id="results" aria-live="polite" aria-labelledby="results-heading" hidden><h2 id="results-heading">Review results</h2><p class="note">Automated checks are prompts for human review, not an accessibility certification. Visual meaning and reading order need speaker review and assistive-technology testing.</p><div id="slide-list"></div><button id="download" type="button">Download reading companion (HTML)</button></section>
+    <section class="panel" aria-labelledby="search-heading"><h2 id="search-heading">Find an explanation</h2><form id="search-form"><label for="query">Search slide text and approved explanations</label><div class="search-row"><input id="query" type="search" required><button type="submit">Search</button></div></form><div id="search-results" aria-live="polite"></div></section>
+  </main>
+  <footer><p>Prototype: supports PPTX text and image metadata checks. It does not rewrite the PowerPoint file, infer the right visual explanation, or establish that a deck is accessible.</p></footer>
+  <script src="/app.js" defer></script>
+</body>
+</html>
