@@ -11,4 +11,4 @@ resources:
 images:
   - name: app
     newName: ghcr.io/sandeepkanabar/accessibility-ninja
-    newTag: 3c29c6b
+    newTag: 6a4896a
