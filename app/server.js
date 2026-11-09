@@ -87,7 +87,7 @@ async function elastic(method, endpoint, body) {
   if (!base) return null;
   const headers = { 'content-type': 'application/json' };
   if (process.env.ELASTICSEARCH_API_KEY) headers.authorization = `ApiKey ${process.env.ELASTICSEARCH_API_KEY}`;
-  const response = await fetch(`${base.replace(/\/$/, '')}/${endpoint}`, { method, headers, body: body ? JSON.stringify(body) : undefined, signal: AbortSignal.timeout(4000) });
+    const response = await fetch(`${base.replace(/\/$/, '')}/${endpoint.replace(/^\/+/, '')}`, { method, headers, body: body ? JSON.stringify(body) : undefined, signal: AbortSignal.timeout(4000) });
   if (!response.ok) throw new Error(`Elasticsearch returned HTTP ${response.status}: ${await response.text()}`);
   return response.json();
 }
